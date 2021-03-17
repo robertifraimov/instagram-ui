@@ -1,0 +1,80 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+.Post {
+  height: 400px;
+  display:flex;
+  flex-direction:column;
+  @include media-breakpoint-up(md) {
+    height: 550px;
+  }
+  border: 1px solid #f1f1f1;
+  margin: 15px 0;
+  border-radius: 3px;
+  overflow: hidden;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+
+    .Post__date {
+      color: #888888;
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+
+  .Post__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    @media (min-width: 768px) {
+      height: 450px;
+    }
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  .Post__user {
+    a {
+      color: #000;
+      text-decoration: none;
+      &:hover {
+        color: #f54555;
+      }
+    }
+
+    &__username {
+      margin-left: 5px;
+    }
+  }
+
+  .Post__content {
+    padding: 0 15px;
+    margin-top: 15px;
+
+    .Post__description {
+      color: #444444;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+
+  }
+
+  &:hover {
+    border-color: #dddddd;
+    .Post__image {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
